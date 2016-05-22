@@ -7,4 +7,6 @@ public interface HelloService {
 
     String sayHello(String name);
 
+    String sayGoodBye(String name);
+
 }

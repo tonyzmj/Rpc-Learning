@@ -20,10 +20,12 @@ public class RpcCoreHandler {
 
     private static ExecutorService threadPool;
 
+    /**
+     * 初始化线程池
+     */
     static {
         threadPool = Executors.newFixedThreadPool(3);
     }
-
 
     public static void publishService(final Object serviceObj, int port) throws IOException {
         if (serviceObj == null) {
@@ -40,6 +42,15 @@ public class RpcCoreHandler {
         }
     }
 
+    /**
+     * 主要通过动态代理
+     *
+     * @param interfaceClass
+     * @param host
+     * @param port
+     * @param <T>
+     * @return
+     */
     public static <T> T invoke(final Class<T> interfaceClass, final String host, final int port) {
         if (interfaceClass == null) {
             new IllegalArgumentException("interfaceClass is null");
@@ -84,6 +95,9 @@ public class RpcCoreHandler {
         });
     }
 
+    /**
+     * 任务task
+     */
     private static class Task implements Runnable {
 
         private Socket socket;
