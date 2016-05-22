@@ -15,6 +15,7 @@ import java.util.concurrent.Executors;
 
 /**
  * Created by mingjun on 16/5/21.
+ * 参考文档：http://javatar.iteye.com/blog/1123915#bc2386426 dubbo的作者
  */
 public class RpcCoreHandler {
 
